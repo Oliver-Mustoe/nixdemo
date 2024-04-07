@@ -1,5 +1,5 @@
 let
-  nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-23.11";
+  nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/archive/72da83d9515b43550436891f538ff41d68eecc7f.tar.gz";
   pkgs = import nixpkgs {config = {}; overlays=[]; };
 in
   pkgs.mkShellNoCC {
@@ -20,6 +20,6 @@ in
    ];
 
    shellHook = ''
-     flask run &
+     flask run
    '';
   }
